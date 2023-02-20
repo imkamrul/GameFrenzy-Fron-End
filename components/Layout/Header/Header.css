@@ -1,0 +1,150 @@
+.navbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: transparent;
+  padding: 15px 0;
+  transition: padding 1s;
+}
+.navbar-wrapper {
+  display: flex;
+  width: full;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar-menu {
+  display: flex;
+}
+.navbar li {
+  list-style: none;
+}
+.navbar-scroll-shadow {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  background: rgb(0, 0, 0);
+  padding: 10px 0;
+  transition: padding 1s;
+  -webkit-transition: padding 1s;
+  -moz-transition: padding 1s;
+  -ms-transition: padding 1s;
+  -o-transition: padding 1s;
+}
+
+.navbar li a {
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  padding: 0 10px;
+  text-shadow: none;
+  transition: color 1s;
+}
+.navbar li a:hover {
+  color: rgb(143, 108, 108);
+}
+
+.right-navbar-part {
+  display: flex;
+  align-items: center;
+}
+.right-navbar-part p span {
+  font-size: 13px;
+  font-weight: 700;
+}
+.right-navbar-part p {
+  font-size: 13px;
+}
+.right-navbar-part li a {
+  font-style: italic;
+  font-size: 13px;
+  font-weight: 400;
+}
+.sub-menu-parent {
+  position: relative;
+}
+.sub-menu-parent .submenu {
+  position: absolute;
+  opacity: 0;
+  min-width: 150px;
+  top: 45px;
+  visibility: hidden;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+}
+.sub-menu-parent:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+  top: 40px;
+}
+.submenu ul {
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
+}
+.submenu li {
+  background: black;
+  padding: 10px 0;
+}
+.sub-menu-parent ul li {
+  background: rgb(0, 0, 0);
+  border-bottom: 1px solid #ddd;
+}
+.sub-menu-parent ul li:hover {
+  background: rgba(0, 0, 0, 0.808);
+}
+.right-navbar-part button {
+  background: transparent;
+  border: 0;
+  margin-left: 10px;
+  cursor: pointer;
+  position: relative;
+}
+.navToggle {
+  position: relative;
+  display: none;
+}
+.navToggle .icon-bar {
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  display: block;
+  margin: 5px 0;
+  position: relative;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}
+
+.navToggle.active .icon-bar:nth-of-type(1) {
+  -webkit-transform: rotate(46deg);
+  transform: rotate(46deg);
+  top: 7px;
+}
+.navToggle.active .icon-bar:nth-of-type(2) {
+  opacity: 0;
+}
+.navToggle.active .icon-bar:nth-of-type(3) {
+  -webkit-transform: rotate(134deg);
+  transform: rotate(134deg);
+  top: -7px;
+}
+.navbar-menu li:last-child {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .navToggle {
+    display: block;
+  }
+  .navbar-menu {
+    display: none;
+  }
+  .right-navbar-part li:first-child {
+    display: none;
+  }
+}

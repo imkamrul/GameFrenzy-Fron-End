@@ -1,6 +1,7 @@
+import Header from "@/components/Layout/Header/Header";
 import PublicLayout from "@/components/Layout/Public/PublicLayout";
 import Head from "next/head";
-
+import "../components/Layout/Header/Header.css";
 import "../styles/globals.css";
 const layoutList = {
   PublicLayout: PublicLayout,
@@ -28,6 +29,7 @@ export default function App({ Component, pageProps }) {
 
       {/* <Provider store={store}> */}
       <Layout>
+        <Header />
         <Component {...pageProps} />
       </Layout>
       {/* </Provider> */}
