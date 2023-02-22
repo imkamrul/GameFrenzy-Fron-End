@@ -1,0 +1,24 @@
+{
+  "hero_slider": [
+    {
+      "slider_bg": "/slider-img/slider-bg-1.jpg",
+      "slider_img": "/slider-img/slider-img-1.png",
+      "slider_title": "/slider-img/slider-title-1.png",
+      "slider_body": "",
+      "btn": [
+        { "btn_name": "Buy Now", "btn_link": "#" },
+        { "btn_name": "Go To Shop", "btn_link": "#" }
+      ]
+    },
+    {
+      "slider_bg": "/slider-img/slider-bg-2.jpg",
+      "slider_img": "/slider-img/slider-img-2.png",
+      "slider_title": "/slider-img/slider-title-2.png",
+      "slider_body": "",
+      "btn": [
+        { "btn_name": "Buy Now", "btn_link": "#" },
+        { "btn_name": "Go To Shop", "btn_link": "#" }
+      ]
+    }
+  ]
+}

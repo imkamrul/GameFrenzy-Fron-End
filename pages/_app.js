@@ -1,4 +1,5 @@
 import Header from "@/components/Layout/Header/Header";
+import HeaderTwo from "@/components/Layout/Header/HeaderTwo";
 import PublicLayout from "@/components/Layout/Public/PublicLayout";
 import Head from "next/head";
 import "../components/Layout/Header/Header.css";
@@ -29,7 +30,8 @@ export default function App({ Component, pageProps }) {
 
       {/* <Provider store={store}> */}
       <Layout>
-        <Header />
+        {false && <Header />}
+        <HeaderTwo />
         <Component {...pageProps} />
       </Layout>
       {/* </Provider> */}

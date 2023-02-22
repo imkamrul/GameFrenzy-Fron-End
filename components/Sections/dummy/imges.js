@@ -5,7 +5,12 @@ const Images = ({ content }) => {
     <div className="test">
       {content?.images.map((item, idx) => {
         return (
-          <img key={idx} src={item?.url} alt="" style={{ width: "33%" }} />
+          <>
+            <div className="test-2">
+              <img key={idx} src={item?.url} alt="" style={{ width: "100%" }} />
+              <p className="text-[red]">{item.fileName}</p>
+            </div>
+          </>
         );
       })}
     </div>
