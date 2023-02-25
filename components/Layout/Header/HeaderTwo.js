@@ -1,12 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const HeaderTwo = () => {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
+
+  const [showShadow, setShowShadow] = useState(false);
+
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    console.log("scrollY :", scrollY);
+    setShowShadow(scrollY > 0);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <>
-      <nav className="navbar">
+      <nav className={`navbar ${showShadow ? "navbar-scroll-shadow" : ""}`}>
         <div className="nav-container">
           <a exact to="/" className="nav-logo">
             CodeBucks
@@ -59,9 +74,14 @@ const HeaderTwo = () => {
               </a>
             </li>
           </ul>
-          <div className="nav-icon" onClick={handleClick}>
-            <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
-          </div>
+          <button
+            className={`nav-icon  ${click && "active"}`}
+            onClick={handleClick}
+          >
+            <span className={`icon-bar`}></span>
+            <span className={`icon-bar`}></span>
+            <span className={`icon-bar`}></span>
+          </button>
         </div>
       </nav>
     </>

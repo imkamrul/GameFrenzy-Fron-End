@@ -5,12 +5,11 @@ import { useEffect, useState } from "react";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  console.log("menuOpen :", menuOpen);
-  const [showShadow, setShowShadow] = useState(false);
-
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  const [showShadow, setShowShadow] = useState(false);
 
   const handleScroll = () => {
     const scrollY = window.scrollY;
