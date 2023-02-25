@@ -1,15 +1,17 @@
+import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const HeaderTwo = () => {
   const [click, setClick] = useState(false);
-
-  const handleClick = () => setClick(!click);
-
   const [showShadow, setShowShadow] = useState(false);
+  const handleClick = () => {
+    setShowShadow(true);
+    setClick(!click);
+  };
 
   const handleScroll = () => {
     const scrollY = window.scrollY;
-    console.log("scrollY :", scrollY);
     setShowShadow(scrollY > 0);
   };
 
@@ -23,10 +25,14 @@ const HeaderTwo = () => {
     <>
       <nav className={`navbar ${showShadow ? "navbar-scroll-shadow" : ""}`}>
         <div className="nav-container">
-          <a exact to="/" className="nav-logo">
-            CodeBucks
-            <i className="fas fa-code"></i>
-          </a>
+          <Link href="/" className="navbar-logo">
+            <Image
+              src="/white-logo-basel.svg"
+              height={40}
+              width={200}
+              alt="image"
+            />
+          </Link>
 
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
@@ -75,7 +81,7 @@ const HeaderTwo = () => {
             </li>
           </ul>
           <button
-            className={`nav-icon  ${click && "active"}`}
+            className={`nav-icon  ${click && "active-icon"}`}
             onClick={handleClick}
           >
             <span className={`icon-bar`}></span>

@@ -7,6 +7,7 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+    setShowShadow(true);
   };
 
   const [showShadow, setShowShadow] = useState(false);
